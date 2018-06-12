@@ -1,0 +1,19 @@
+{
+    "name": "kevinmouga/router-grafikart",
+    "authors": [
+        {
+            "name": "Kevin Mougammadaly",
+            "email": "kevin.mougammadaly@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {
+        "symfony/templating": "^4.0",
+        "twig/twig": "^2.0",
+        "intervention/image": "^2.4"
+    }
+}

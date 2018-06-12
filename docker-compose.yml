@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - database
+    environment:
+      - PHPOOP_DB_HOST=database
+      - PHPOOP_DB_NAME=demo
+      - PHPOOP_DB_USER=demo
+      - PHPOOP_DB_PASS=demo
+
+  database:
+    image: mysql:5.7
+    expose:
+      - "3306"
+    volumes:
+      - mysql_data_assur:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=demo
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=demo
+      - MYSQL_PASSWORD=demo
+
+  db_admin:
+    image: adminer
+    links:
+      - database
+    ports:
+       - 8082:8080
+
+volumes:
+  mysql_data_assur: {}
