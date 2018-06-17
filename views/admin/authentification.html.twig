@@ -1,26 +1,65 @@
 {% extends 'base_admin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="../../asset/css/login.css">
+{% endblock %}
 
 {% block content %}
-    <section id="login">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-wrap">
-                        <h1>connexion</h1>
-                        <form role="form"  method="post" id="login-form" >
-                            <div class="form-group">
-                                <label for="email" class="sr-only"  >Email</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="key" class="sr-only">Password</label>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                            </div>
-                            <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" name="submit">
-                        </form>
+
+
+    <div class="limiter">
+        <a href="#" class="txt1">
+            <p>
+                Revenir au site
+            </p>
+        </a>
+        <div class="container-login100">
+            <div class="wrap-login100 p-t-50 p-b-90">
+                <form method="post" class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-51">
+						Connexion
+					</span>
+
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+                        <input class="input100" type="email" name="email" placeholder="email">
+                        <span class="focus-input100"></span>
                     </div>
-                </div>
+
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        <input class="input100" type="password" name="password" placeholder="Mot de passe" required>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="flex-sb-m w-full p-t-3 p-b-24">
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="forgot">
+                            <a href="#" class="txt1">
+                                Mot de passe oublié ?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="container-login100-form-btn m-t-17">
+                        <button name="submit" class="login100-form-btn">
+                            Login
+                        </button>
+                    </div>
+
+                    {% if  error != NULL %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                </form>
             </div>
         </div>
-    </section>
+    </div>
 {% endblock %}

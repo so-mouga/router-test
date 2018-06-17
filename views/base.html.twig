@@ -8,12 +8,14 @@
             S & Kitchen - Chef à domicile dans le Vaucluse & Cours de cuisine - S AND K la cuisine asiatique à domicile
         </title>
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="../asset/css/home.css">
+        {% endblock %}
     </head>
     <body>
         {% block content %}
         {% endblock %}
 
-    {% block javascripts %}{% endblock %}
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

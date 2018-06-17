@@ -47,12 +47,12 @@ class Menu
 
     public function __construct(
         int $id,
-        string $menuName,
-        string $starter,
+        string $menuName = null,
+        string $starter = null,
         string $starterDescription = null,
-        string $dish,
+        string $dish = null,
         string $dishDescription = null,
-        string $dessert,
+        string $dessert = null,
         string $dessertDescription = null
     )
     {
@@ -85,7 +85,7 @@ class Menu
     /**
      * @return string
      */
-    public function getMenuName(): string
+    public function getMenuName(): ?string
     {
         return $this->menuName;
     }
@@ -101,7 +101,7 @@ class Menu
     /**
      * @return string
      */
-    public function getStarter(): string
+    public function getStarter(): ?string
     {
         return $this->starter;
     }
@@ -133,7 +133,7 @@ class Menu
     /**
      * @return string
      */
-    public function getDish(): string
+    public function getDish(): ?string
     {
         return $this->dish;
     }
@@ -165,7 +165,7 @@ class Menu
     /**
      * @return string
      */
-    public function getDessert(): string
+    public function getDessert(): ?string
     {
         return $this->dessert;
     }

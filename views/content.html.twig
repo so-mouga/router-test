@@ -1,10 +1,26 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-        Welcome to my awesome homepage.
-    </p>
-    {{ menu.dish }}
-    {{ language }}
+    <!-- Navigation start -->
+    <nav class="nav-bar">
+        <div class="container">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" >logo</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll"><a href="#home">ACCEUIL</a></li>
+                    <li class="page-scroll"><a href="#about">LA CHEF</a></li>
+                    <li class="page-scroll"><a href="#gallery">GALERIE</a></li>
+                    <li class="page-scroll"><a href="#cours">COURS DE CUISINE</a></li>
+                    <li class="page-scroll"><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Navigation end -->
+
 {% endblock %}

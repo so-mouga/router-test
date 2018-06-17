@@ -51,8 +51,8 @@ class MenuRepository
 
         $attributes = [
             $menu->getMenuName(),
+            $menu->getStarter(),
             $menu->getStarterDescription(),
-            $menu->getMenuName(),
             $menu->getDish(),
             $menu->getDishDescription(),
             $menu->getDessert(),

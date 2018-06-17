@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-en, .menu-fr {
+    width: 100%;
+    margin: 20px;
+}
+
+.form-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-menu-valid {
+    width: 40%;
+}

@@ -48,7 +48,7 @@ class Database
         return $this->pdo;
     }
 
-    public function query($statement, $one = false)
+    public function query(string $statement, $one = false)
     {
         $req = $this->getPDO()->query($statement);
 
@@ -61,7 +61,7 @@ class Database
         return $datas;
     }
 
-    public function prepare($statement, $attributes, $one = false)
+    public function prepare(string $statement, array $attributes, $one = false)
     {
         $req = $this->getPDO()->prepare($statement);
 
@@ -77,7 +77,7 @@ class Database
         return $data;
     }
 
-    public function insert($statement, $attributes)
+    public function insert(string $statement,array $attributes)
     {
 /*  'INSERT INTO user (name, lastname) VALUE (?, ?)', ['lulu', 'ok']*/
         $req = $this->getPDO()->prepare($statement);
@@ -90,7 +90,7 @@ class Database
         return $req->execute();
     }
 
-    public function update($statement, $attributes)
+    public function update(string $statement,array $attributes)
     {
         $req = $this->getPDO()->prepare($statement);
         $indice = 1;

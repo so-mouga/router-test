@@ -9,11 +9,12 @@ class ImageController
     public function __construct()
     {
         $imageManager = new ImageManager();
-        if(extension_loaded('gd')){var_dump('test');
-        exit;}
+/*        if(extension_loaded('gd')){
+
+        }
 
         phpinfo();
-        exit();
+        exit();*/
 
         $image = $imageManager->make(getcwd().'/images/test.jpg');
         var_dump($image);

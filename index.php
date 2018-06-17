@@ -8,9 +8,13 @@ $router->get('/en', "Home#index" );
 
 $router->get('/admin', "Authentication#login" );
 $router->post('/admin', "Authentication#login" );
+$router->get('/admin/logout', "Authentication#logout" );
 
 $router->get('/admin/menu', "AdminMenu#index" );
 $router->post('/admin/menu', "AdminMenu#index" );
+
+$router->get('/admin/compte', "AdminUser#index" );
+$router->post('/admin/compte', "AdminUser#index" );
 
 $router->get('/admin/image', "AdminImage#index" );
 $router->post('/admin/image', "AdminImage#index" );

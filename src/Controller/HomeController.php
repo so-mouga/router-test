@@ -26,10 +26,7 @@ class HomeController
         $language = ($_GET['url'] === 'en') ? 'en' : 'fr';
         $menu = $this->menu->getMenu($language);
 
-        $image = new ImageController();
-
-        var_dump('test');
-        exit;
+/*        $image = new ImageController();*/
 
         echo $this->twig->render('content.html.twig', [
             'language'  =>  $language,

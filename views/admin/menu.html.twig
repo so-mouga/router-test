@@ -1,7 +1,9 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block content %}
-    <form  method="post">
+    {{ include('admin/top_bar.html.twig') }}
+
+{#    <form  method="post" style="margin: 50px">
         <h3>Menu Fr</h3>
         <div class="form-group row">
             <label for="menuName_fr" class="col-sm-2 col-form-label">Nom du menu</label>
@@ -41,7 +43,7 @@
         </div>
         <input type="hidden" name="id_fr" value="{{ menu_fr.id }}">
 
-{#  ================   #}
+#}{#  ================   #}{#
 
         <h3>Menu En</h3>
         <div class="form-group row">
@@ -83,5 +85,86 @@
         <input type="hidden" name="id_en" value="{{ menu_en.id}}">
 
         <input type="submit" id="btn-login" class="btn btn-primary" name="valid" value="Valider">
-    </form>
+    </form>#}
+
+    <div class="container">
+        <div class="">
+            <div class="form-area">
+                <form role="form" class="form-menu">
+                    <div class="menu" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="menu-fr">
+                            <br style="clear:both">
+                            <h3 style="margin-bottom: 25px; text-align: center;">Menu français</h3>
+                            <div class="form-group">
+                                <label for="menuName_fr">Nom du menu :</label>
+                                <input type="text" class="form-control" id="menuName_fr" name="menuName_fr" value="{{ menu_fr.menuName }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="starter_fr">Entrée :</label>
+                                <input type="text" class="form-control" id="starter_fr" name="starter_fr" value="{{ menu_fr.starter }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="starterDescription_fr">description de l'entrée :</label>
+                                <input type="text" class="form-control" id="starterDescription_fr" name="starterDescription_fr" value="{{ menu_fr.starterDescription }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dish_fr">Plat :</label>
+                                <input type="text" class="form-control" id="dish_fr" name="dish_fr" value="{{ menu_fr.dish }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dishDescription_fr">Description du Plat :</label>
+                                <input type="text" class="form-control" id="dishDescription_fr" name="dishDescription_fr" value="{{ menu_fr.dishDescription }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dessert_fr">Dessert :</label>
+                                <input type="text" class="form-control" id="dessert_fr" name="dessert_fr" value="{{ menu_fr.dessert }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dessertDescription_fr">Description du dessert :</label>
+                                <input type="text" class="form-control" id="dessertDescription_fr" name="dessertDescription_fr" value="{{ menu_fr.dessertDescription }}">
+                            </div>
+                            <input type="hidden" name="id_fr" value="{{ menu_fr.id }}">
+                        </div>
+
+                        <div class="menu-en">
+                            <br style="clear:both">
+                            <h3 style="margin-bottom: 25px; text-align: center;">Menu anglais</h3>
+                            <div class="form-group">
+                                <label for="menuName_en">Nom du menu :</label>
+                                <input type="text" class="form-control" id="menuName_en" name="menuName_en" value="{{ menu_en.menuName }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="starter_en">Entrée :</label>
+                                <input type="text" class="form-control" id="starter_en" name="starter_en" value="{{ menu_en.starter }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="starterDescription_en">description de l'entrée :</label>
+                                <input type="text" class="form-control" id="starterDescription_en" name="starterDescription_en" value="{{ menu_en.starterDescription }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dish_en">Plat :</label>
+                                <input type="text" class="form-control" id="dish_en" name="dish_en" value="{{ menu_en.dish }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dishDescription_en">Description du Plat :</label>
+                                <input type="text" class="form-control" id="dishDescription_en" name="dishDescription_en" value="{{ menu_en.dishDescription }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="dessert_en">Dessert :</label>
+                                <input type="text" class="form-control" id="dessert_en" name="dessert_en" value="{{ menu_en.dessert }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dessertDescription_en">Description du dessert :</label>
+                                <input type="text" class="form-control" id="dessertDescription_en" name="dessertDescription_en" value="{{ menu_en.dessertDescription }}">
+                            </div>
+                        </div>
+                        <input type="hidden" name="id_en" value="{{ menu_en.id }}">
+                    </div>
+                    <div class="btn-menu">
+                        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right btn-menu-valid">Valider</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}
